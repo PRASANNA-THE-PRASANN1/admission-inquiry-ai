@@ -1,0 +1,178 @@
+{
+  "university_info": {
+    "name": "Springfield University",
+    "established": "1950",
+    "location": "Springfield, Illinois",
+    "type": "Public Research University",
+    "enrollment": "15000",
+    "campus_size": "200 acres",
+    "motto": "Excellence in Education and Research",
+    "accreditation": "Higher Learning Commission"
+  },
+  "contact_info": {
+    "admissions_office": {
+      "phone": "(555) 123-4567",
+      "email": "admissions@springfield.edu",
+      "address": "123 University Avenue, Springfield, IL 62701",
+      "hours": "Monday-Friday, 8:00 AM - 5:00 PM",
+      "fax": "(555) 123-4568"
+    },
+    "financial_aid": {
+      "phone": "(555) 123-4569",
+      "email": "finaid@springfield.edu"
+    },
+    "international_admissions": {
+      "phone": "(555) 123-4570",
+      "email": "international@springfield.edu"
+    }
+  },
+  "faqs": [
+    {
+      "id": "req_001",
+      "question": "What are the admission requirements for undergraduate programs?",
+      "answer": "To apply for undergraduate admission, you need: 1) High school diploma or equivalent with minimum 3.0 GPA, 2) SAT score of 1200+ or ACT score of 26+, 3) Two letters of recommendation from teachers or counselors, 4) Personal statement (500-750 words), 5) Official transcripts from all high schools attended, 6) Application fee of $50. Some programs may have additional requirements.",
+      "category": "admission_requirements",
+      "keywords": ["requirements", "admission", "undergraduate", "GPA", "SAT", "ACT", "transcripts", "recommendation letters"]
+    },
+    {
+      "id": "req_002", 
+      "question": "What are the admission requirements for graduate programs?",
+      "answer": "Graduate admission requirements vary by program but typically include: 1) Bachelor's degree from accredited institution with minimum 3.0 GPA, 2) GRE or GMAT scores (program dependent), 3) Three letters of recommendation, 4) Statement of purpose, 5) Official transcripts from all colleges attended, 6) Application fee of $75. International students need TOEFL/IELTS scores.",
+      "category": "admission_requirements",
+      "keywords": ["graduate", "requirements", "GRE", "GMAT", "bachelor's degree", "statement of purpose", "TOEFL", "IELTS"]
+    },
+    {
+      "id": "deadline_001",
+      "question": "When are the application deadlines?",
+      "answer": "Application deadlines vary by semester and program: Fall Semester - March 1st (Regular Decision), November 15th (Early Decision); Spring Semester - October 1st; Summer Semester - March 1st. Graduate program deadlines may differ. Priority deadlines ensure full consideration for admission and financial aid. Late applications are reviewed on a space-available basis.",
+      "category": "application_deadline",
+      "keywords": ["deadline", "application", "fall", "spring", "summer", "early decision", "regular decision", "priority"]
+    },
+    {
+      "id": "deadline_002",
+      "question": "What is the difference between Early Decision and Regular Decision?",
+      "answer": "Early Decision (November 15th) is a binding commitment - if accepted, you must attend Springfield University. Benefits include priority consideration and early notification by December 15th. Regular Decision (March 1st) is non-binding, allowing you to compare offers from multiple schools. Notification is by April 1st. Both have equal consideration for merit scholarships.",
+      "category": "application_deadline", 
+      "keywords": ["early decision", "regular decision", "binding", "notification", "priority", "scholarships"]
+    },
+    {
+      "id": "fees_001",
+      "question": "What are the tuition and fees for undergraduate students?",
+      "answer": "For the 2024-2025 academic year: In-state tuition: $12,000/year ($6,000/semester), Out-of-state tuition: $28,000/year ($14,000/semester), General fees: $2,400/year, Room and board: $14,000/year, Books and supplies: $1,500/year, Personal expenses estimate: $2,000/year. Total estimated cost: $31,900 (in-state) or $47,900 (out-of-state).",
+      "category": "tuition_fees",
+      "keywords": ["tuition", "fees", "cost", "in-state", "out-of-state", "room", "board", "books", "expenses"]
+    },
+    {
+      "id": "fees_002",
+      "question": "What are the tuition and fees for graduate students?",
+      "answer": "Graduate tuition (2024-2025): In-state: $14,000/year, Out-of-state: $32,000/year. Graduate fees: $1,800/year. MBA program: $25,000/year (in-state), $35,000/year (out-of-state). Doctoral students may receive assistantships covering tuition plus stipend. Part-time rates available. International student fee: $500/year additional.",
+      "category": "tuition_fees",
+      "keywords": ["graduate", "tuition", "MBA", "doctoral", "assistantship", "part-time", "international", "in-state", "out-of-state"]
+    },
+    {
+      "id": "programs_001",
+      "question": "What undergraduate programs do you offer?",
+      "answer": "We offer over 80 undergraduate programs across 6 colleges: College of Arts & Sciences (English, History, Psychology, Biology, Chemistry, Physics, Mathematics), College of Business (Accounting, Finance, Marketing, Management), College of Engineering (Computer Science, Electrical, Mechanical, Civil), College of Education, College of Fine Arts (Music, Art, Theater), College of Health Sciences (Nursing, Pre-Med, Exercise Science). Most programs offer both BA/BS degrees.",
+      "category": "programs_offered",
+      "keywords": ["undergraduate", "programs", "majors", "degrees", "arts", "sciences", "business", "engineering", "education", "fine arts", "health"]
+    },
+    {
+      "id": "programs_002",
+      "question": "What graduate programs are available?",
+      "answer": "Graduate programs include: Master's degrees in 35+ fields (MBA, MS Computer Science, MEd, MA English, MS Engineering, etc.), Doctoral programs (PhD in 15 fields including Psychology, Education, Engineering, Sciences), Professional programs (Education Specialist), Certificate programs. Many programs offer thesis and non-thesis options, full-time and part-time study, and some online options.",
+      "category": "programs_offered",
+      "keywords": ["graduate", "masters", "MBA", "doctoral", "PhD", "professional", "certificate", "thesis", "online", "part-time"]
+    },
+    {
+      "id": "aid_001",
+      "question": "What financial aid options are available?",
+      "answer": "Financial aid includes: Federal grants (Pell Grant up to $7,395, SEOG), Federal loans (Direct Subsidized/Unsubsidized, PLUS), State grants (MAP Grant for Illinois residents), University merit scholarships ($1,000-$20,000), Need-based grants, Work-study positions ($8-12/hour), Graduate assistantships. Over 85% of students receive some form of financial aid. Average aid package: $18,500.",
+      "category": "financial_aid",
+      "keywords": ["financial aid", "scholarships", "grants", "loans", "Pell Grant", "work-study", "assistantships", "merit", "need-based"]
+    },
+    {
+      "id": "aid_002",
+      "question": "How do I apply for financial aid?",
+      "answer": "To apply for financial aid: 1) Complete FAFSA at studentaid.gov using Springfield University school code 001234, 2) Submit by March 1st for priority consideration, 3) Apply for university scholarships by February 1st, 4) Submit verification documents if selected, 5) Review financial aid award letter, 6) Accept/decline aid by May 1st. Renew FAFSA annually. CSS Profile not required.",
+      "category": "financial_aid",
+      "keywords": ["FAFSA", "apply", "financial aid", "school code", "verification", "scholarships", "CSS Profile", "deadline"]
+    },
+    {
+      "id": "contact_001",
+      "question": "How can I contact the admissions office?",
+      "answer": "Admissions Office Contact Information: Phone: (555) 123-4567, Email: admissions@springfield.edu, Address: 123 University Avenue, Springfield, IL 62701. Office hours: Monday-Friday 8:00 AM - 5:00 PM. Fax: (555) 123-4568. Virtual appointments available via Zoom. Walk-ins welcome during business hours. For after-hours inquiries, email responses within 24 hours on business days.",
+      "category": "contact_info",
+      "keywords": ["contact", "phone", "email", "address", "office hours", "appointments", "admissions office"]
+    },
+    {
+      "id": "contact_002",
+      "question": "Who should I contact for specific questions?",
+      "answer": "Contact the appropriate office: General Admissions: (555) 123-4567, Financial Aid: (555) 123-4569, International Students: (555) 123-4570, Graduate Admissions: (555) 123-4571, Transfer Students: (555) 123-4572, Scholarships: (555) 123-4573, Housing: (555) 123-4574, Academic Advising: (555) 123-4575. Each office has specialized staff to provide detailed assistance.",
+      "category": "contact_info",
+      "keywords": ["contact", "specific", "departments", "financial aid", "international", "graduate", "transfer", "housing", "advising"]
+    },
+    {
+      "id": "visit_001",
+      "question": "Can I visit the campus?",
+      "answer": "Yes! Campus visits are highly encouraged. Options include: Daily campus tours at 10:00 AM and 2:00 PM (Monday-Friday), 11:00 AM and 1:00 PM (Saturday), Information sessions Tuesdays and Thursdays at 3:00 PM, Overnight visits for high school seniors, Special visit days for admitted students, Virtual tours available 24/7 online. Schedule visits at least 48 hours in advance at springfield.edu/visit or call (555) 123-4567.",
+      "category": "campus_visit",
+      "keywords": ["campus visit", "tour", "information session", "overnight", "virtual tour", "schedule", "admitted students"]
+    },
+    {
+      "id": "visit_002",
+      "question": "What should I expect during a campus visit?",
+      "answer": "Campus visits typically include: 90-minute walking tour of academic buildings, residence halls, dining facilities, and recreation centers; Information session covering academics, student life, and admissions process; Opportunity to sit in on a class (arranged in advance); Meeting with admissions counselor; Lunch in dining hall; Visit to specific departments if requested. Wear comfortable walking shoes. Parking passes provided at visitor center.",
+      "category": "campus_visit",
+      "keywords": ["campus visit", "tour", "what to expect", "information session", "class visit", "dining", "parking", "walking"]
+    },
+    {
+      "id": "housing_001",
+      "question": "What housing options are available?",
+      "answer": "On-campus housing includes: Traditional residence halls (double rooms, shared bathrooms), Suite-style housing (4 students, 2 bedrooms, shared living area), Apartment-style housing (upperclassmen, full kitchen), Special interest housing (Honors, International, Wellness), Greek housing. All freshmen required to live on campus unless commuting from family home within 30 miles. Housing costs: $8,000-12,000/year depending on type.",
+      "category": "housing",
+      "keywords": ["housing", "residence halls", "dormitory", "suite", "apartment", "special interest", "freshman", "on-campus", "Greek"]
+    },
+    {
+      "id": "housing_002",
+      "question": "How do I apply for housing?",
+      "answer": "Housing application process: 1) Submit housing application online after admission deposit, 2) Pay $200 housing deposit (refundable), 3) Complete roommate preference survey, 4) Submit by May 1st for best selection, 5) Receive housing assignment in July, 6) Complete dining plan selection. Room selection process for returning students in April. Cancellation policies apply. Contact Housing Office: (555) 123-4574.",
+      "category": "housing",
+      "keywords": ["housing application", "deposit", "roommate", "dining plan", "room selection", "assignment", "cancellation"]
+    },
+    {
+      "id": "transfer_001",
+      "question": "What are the requirements for transfer students?",
+      "answer": "Transfer admission requirements: 1) Minimum 24 transferable credit hours with 2.5+ GPA, 2) Official transcripts from all colleges attended, 3) High school transcript if less than 30 credits completed, 4) Good academic standing at previous institution, 5) Application fee $50. Credits from regionally accredited institutions transfer. Maximum 90 credits accepted. Deadline: Rolling admissions, priority by June 1st (Fall), November 1st (Spring).",
+      "category": "admission_requirements",
+      "keywords": ["transfer", "requirements", "credits", "GPA", "transcripts", "good standing", "accredited", "deadline"]
+    },
+    {
+      "id": "international_001",
+      "question": "What are the requirements for international students?",
+      "answer": "International student requirements: 1) Academic credentials equivalent to US high school diploma, 2) TOEFL iBT 80+ or IELTS 6.5+ or Duolingo 105+, 3) Financial documentation showing $35,000+ for one year, 4) Passport copy, 5) Application deadline: May 1st (Fall), October 1st (Spring), 6) I-20 issued after admission and deposit. Conditional admission available for English proficiency. No SAT/ACT required if TOEFL/IELTS submitted.",
+      "category": "admission_requirements",
+      "keywords": ["international", "TOEFL", "IELTS", "Duolingo", "financial documentation", "I-20", "passport", "conditional admission"]
+    },
+    {
+      "id": "scholarships_001",
+      "question": "What scholarships are available?",
+      "answer": "Merit scholarships include: Presidential Scholarship ($20,000/year, GPA 3.8+, SAT 1400+/ACT 32+), Dean's Scholarship ($15,000/year, GPA 3.6+, SAT 1300+/ACT 29+), Achievement Scholarship ($10,000/year, GPA 3.4+, SAT 1200+/ACT 26+), Diversity Scholarships, Departmental scholarships, Need-based grants. Scholarships renewable with 3.0+ GPA. Automatic consideration with admission application. Additional scholarships require separate applications by February 1st.",
+      "category": "financial_aid",
+      "keywords": ["scholarships", "merit", "Presidential", "Dean's", "Achievement", "diversity", "departmental", "renewable", "automatic", "GPA"]
+    },
+    {
+      "id": "athletics_001",
+      "question": "Does Springfield University have athletics programs?",
+      "answer": "Yes! Springfield University competes in NCAA Division II with 18 varsity sports: Men's sports include basketball, baseball, football, soccer, tennis, golf, track & field, cross country, swimming. Women's sports include basketball, softball, volleyball, soccer, tennis, golf, track & field, cross country, swimming. Athletic scholarships available. Intramural and club sports also offered. Facilities include 15,000-seat stadium, gymnasium, aquatic center, and fitness facilities.",
+      "category": "programs_offered",
+      "keywords": ["athletics", "NCAA", "Division II", "varsity sports", "scholarships", "intramural", "club sports", "facilities", "stadium"]
+    },
+    {
+      "id": "student_life_001",
+      "question": "What is student life like at Springfield University?",
+      "answer": "Student life includes: 150+ student organizations and clubs, Greek life (12 fraternities, 10 sororities), Student Government Association, Campus Activities Board, Volunteer programs, Career Services, Counseling and Wellness Center, Recreation Center with fitness equipment and classes, Dining services with multiple meal plans, Campus traditions like Homecoming and Spring Fest. 85% of students participate in extracurricular activities.",
+      "category": "programs_offered",
+      "keywords": ["student life", "organizations", "clubs", "Greek life", "student government", "volunteer", "career services", "counseling", "recreation", "dining"]
+    }
+  ]
+}

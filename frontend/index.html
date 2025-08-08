@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AI-powered admission inquiry assistant for universities" />
+    <meta name="keywords" content="admission, university, AI assistant, education, inquiry" />
+    <meta name="author" content="University Admissions" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AI Admission Inquiry Assistant" />
+    <meta property="og:description" content="Get instant answers to your admission questions with our AI-powered assistant" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="AI Admission Inquiry Assistant" />
+    <meta property="twitter:description" content="Get instant answers to your admission questions with our AI-powered assistant" />
+    
+    <title>AI Admission Inquiry Assistant</title>
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (if not using build process) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      /* Custom CSS for loading animation */
+      .loading-animation {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Custom scrollbar */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 3px;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      
+      /* Voice visualization */
+      .voice-wave {
+        display: inline-block;
+        width: 4px;
+        height: 20px;
+        background: linear-gradient(to top, #3b82f6, #1d4ed8);
+        margin: 0 1px;
+        border-radius: 2px;
+        animation: voice-wave 1.5s ease-in-out infinite;
+      }
+      
+      .voice-wave:nth-child(2) { animation-delay: 0.1s; }
+      .voice-wave:nth-child(3) { animation-delay: 0.2s; }
+      .voice-wave:nth-child(4) { animation-delay: 0.3s; }
+      .voice-wave:nth-child(5) { animation-delay: 0.4s; }
+      
+      @keyframes voice-wave {
+        0%, 100% { height: 4px; }
+        50% { height: 20px; }
+      }
+      
+      /* Typing indicator */
+      .typing-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+      
+      .typing-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #6b7280;
+        animation: typing 1.4s ease-in-out infinite;
+      }
+      
+      .typing-dot:nth-child(1) { animation-delay: 0s; }
+      .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+      .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+      
+      @keyframes typing {
+        0%, 60%, 100% { transform: translateY(0); }
+        30% { transform: translateY(-10px); }
+      }
+      
+      /* Message animations */
+      .message-enter {
+        animation: messageSlideIn 0.3s ease-out;
+      }
+      
+      @keyframes messageSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Button hover effects */
+      .btn-primary {
+        @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+      }
+      
+      .btn-secondary {
+        @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+      }
+      
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #374151;
+        }
+        
+        .typing-dot {
+          background-color: #9ca3af;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <!-- Loading fallback -->
+    <noscript>
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <h1>AI Admission Inquiry Assistant</h1>
+        <p>This application requires JavaScript to run. Please enable JavaScript in your browser.</p>
+      </div>
+    </noscript>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

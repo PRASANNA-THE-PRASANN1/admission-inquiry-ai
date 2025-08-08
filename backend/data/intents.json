@@ -1,0 +1,295 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Hey",
+        "Good morning",
+        "Good afternoon", 
+        "Good evening",
+        "Greetings",
+        "Hi there",
+        "Hello there",
+        "What's up",
+        "Howdy",
+        "Sup"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Goodbye",
+        "Bye",
+        "See you later",
+        "Thank you",
+        "Thanks",
+        "That's all",
+        "Have a good day",
+        "Take care",
+        "See ya",
+        "Catch you later",
+        "Thanks for your help",
+        "That helps, thanks"
+      ]
+    },
+    {
+      "tag": "admission_requirements",
+      "patterns": [
+        "What are the admission requirements?",
+        "admission criteria",
+        "requirements for admission",
+        "what do I need to apply",
+        "eligibility criteria",
+        "admission qualifications",
+        "entry requirements",
+        "what documents do I need",
+        "application requirements",
+        "how to get admitted",
+        "admission process",
+        "what grades do I need",
+        "GPA requirements",
+        "test score requirements",
+        "SAT requirements",
+        "ACT requirements",
+        "what do I need for admission",
+        "admission standards",
+        "minimum requirements",
+        "prerequisites for admission"
+      ]
+    },
+    {
+      "tag": "application_deadline",
+      "patterns": [
+        "When is the application deadline?",
+        "deadline for applications",
+        "last date to apply",
+        "application due date",
+        "when should I apply",
+        "application timeline",
+        "admission deadlines",
+        "when do applications close",
+        "final deadline",
+        "priority deadline",
+        "early decision deadline",
+        "regular decision deadline",
+        "fall application deadline",
+        "spring application deadline",
+        "when is it due",
+        "application cutoff date",
+        "submission deadline",
+        "when must I apply by"
+      ]
+    },
+    {
+      "tag": "tuition_fees",
+      "patterns": [
+        "What are the tuition fees?",
+        "cost of education",
+        "fees structure",
+        "how much does it cost",
+        "tuition costs",
+        "education expenses",
+        "fee details",
+        "total cost",
+        "cost of attendance",
+        "tuition and fees", 
+        "room and board costs",
+        "housing costs",
+        "meal plan costs",
+        "what will I pay",
+        "education costs",
+        "yearly costs",
+        "semester fees",
+        "in-state tuition",
+        "out-of-state tuition",
+        "international student fees"
+      ]
+    },
+    {
+      "tag": "programs_offered",
+      "patterns": [
+        "What programs do you offer?",
+        "available courses",
+        "list of programs",
+        "majors available",
+        "degree programs",
+        "course offerings",
+        "academic programs",
+        "what can I study",
+        "undergraduate programs",
+        "graduate programs",
+        "master's programs",
+        "doctoral programs",
+        "PhD programs",
+        "bachelor's degrees",
+        "what majors are there",
+        "fields of study",
+        "departments",
+        "colleges",
+        "schools",
+        "areas of study"
+      ]
+    },
+    {
+      "tag": "financial_aid",
+      "patterns": [
+        "Financial aid options",
+        "scholarships available",
+        "student loans",
+        "grants and scholarships",
+        "financial assistance",
+        "funding options",
+        "how to pay for college",
+        "need-based aid",
+        "merit scholarships",
+        "work study",
+        "student employment",
+        "FAFSA",
+        "financial support",
+        "aid programs",
+        "scholarship opportunities",
+        "grant money",
+        "student financial services",
+        "tuition assistance",
+        "education funding",
+        "money for school"
+      ]
+    },
+    {
+      "tag": "contact_info",
+      "patterns": [
+        "How can I contact admissions?",
+        "admissions office contact",
+        "phone number",
+        "email address", 
+        "contact details",
+        "get in touch",
+        "how to reach you",
+        "contact information",
+        "admissions phone",
+        "admissions email",
+        "office location",
+        "mailing address",
+        "office hours",
+        "how to contact",
+        "reach admissions",
+        "speak to someone",
+        "talk to admissions",
+        "customer service",
+        "help desk"
+      ]
+    },
+    {
+      "tag": "campus_visit",
+      "patterns": [
+        "Can I visit the campus?",
+        "campus tour",
+        "visit the university",
+        "campus visits",
+        "schedule a tour",
+        "campus information session",
+        "see the campus"
+      ]
+    },
+    {
+      "tag": "housing",
+      "patterns": [
+        "Student housing options",
+        "dormitories",
+        "accommodation",
+        "residence halls",
+        "on-campus housing",
+        "where will I live",
+        "dorm rooms",
+        "student apartments",
+        "residential life",
+        "housing application",
+        "room and board",
+        "campus living",
+        "student residences",
+        "housing costs",
+        "meal plans",
+        "roommates",
+        "living arrangements"
+      ]
+    },
+    {
+      "tag": "transfer_students",
+      "patterns": [
+        "transfer student requirements",
+        "transferring credits",
+        "transfer admissions",
+        "transfer from another college",
+        "transfer application",
+        "credit transfer",
+        "transfer process",
+        "changing schools",
+        "transfer deadlines",
+        "transfer GPA requirements",
+        "transfer student services",
+        "articulation agreements",
+        "transfer credits accepted",
+        "previous college credits"
+      ]
+    },
+    {
+      "tag": "international_students",
+      "patterns": [
+        "international student requirements",
+        "foreign student admissions",
+        "visa requirements",
+        "TOEFL requirements",
+        "IELTS requirements",
+        "English proficiency",
+        "international application",
+        "student visa",
+        "F-1 visa",
+        "I-20 form",
+        "international student services",
+        "studying from abroad",
+        "foreign credentials",
+        "international fees"
+      ]
+    },
+    {
+      "tag": "student_life",
+      "patterns": [
+        "student life",
+        "campus activities",
+        "student organizations",
+        "clubs and activities",
+        "extracurricular activities",
+        "campus culture",
+        "student services",
+        "recreation",
+        "sports",
+        "Greek life",
+        "fraternities",
+        "sororities",
+        "student government",
+        "campus events",
+        "student support"
+      ]
+    },
+    {
+      "tag": "athletics",
+      "patterns": [
+        "athletics programs",
+        "sports teams",
+        "athletic scholarships",
+        "varsity sports",
+        "intramural sports",
+        "college sports",
+        "NCAA",
+        "athletic facilities",
+        "sports programs",
+        "team sports",
+        "recreation center",
+        "fitness facilities",
+        "gym"
+      ]
+    }
+  ]
+}
