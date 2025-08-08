@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AI Admission Inquiry Assistant
 
 A comprehensive AI-powered chatbot system for handling university admission inquiries through text and voice interactions. Built with Python Flask backend and React frontend.
@@ -442,3 +443,6 @@ For support and questions:
 
 **Version**: 1.0.0  
 **Last Updated**: 2024
+=======
+# admission-inquiry-ai
+>>>>>>> e0157f7e6410e047c75c2b6b07921bb87ef08f3a
