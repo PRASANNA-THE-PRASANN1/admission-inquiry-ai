@@ -1,0 +1,2 @@
+2025-08-10 00:06:12 - admission_assistant - ERROR - app:168 - No transcript returned
+2025-08-10 00:12:52 - admission_assistant - ERROR - app:159 - Audio validation failed: FFmpeg is required for WebM files but not found

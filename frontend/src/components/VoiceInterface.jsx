@@ -12,6 +12,7 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
   const [conversations, setConversations] = useState([])
   const [currentAudio, setCurrentAudio] = useState(null)
   const [audioPermission, setAudioPermission] = useState(null)
+  const [lastError, setLastError] = useState(null)
 
   const mediaRecorderRef = useRef(null)
   const audioChunksRef = useRef([])
@@ -49,6 +50,9 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
         throw new Error('MediaDevices API not supported')
       }
 
+      // Reset any previous errors
+      setLastError(null)
+
       const stream = await navigator.mediaDevices.getUserMedia({ 
         audio: {
           echoCancellation: true,
@@ -72,7 +76,7 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
         }
       }
 
-      mediaRecorder.onstop = processRecording
+      mediaRecorder.onstop = handleRecordingStopped
 
       mediaRecorder.start(1000) // Collect data every second
       setIsRecording(true)
@@ -87,6 +91,7 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
 
     } catch (error) {
       console.error('Error starting recording:', error)
+      setLastError('Failed to start recording. Please check microphone permissions.')
       toast.error('Failed to start recording. Please check microphone permissions.')
     }
   }
@@ -108,6 +113,15 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
     }
   }
 
+  const handleRecordingStopped = () => {
+    processRecording().catch(error => {
+      console.error('Error in processRecording:', error)
+      setIsProcessing(false)
+      setLastError(error.message || 'Failed to process recording')
+      toast.error('Failed to process voice message')
+    })
+  }
+
   const processRecording = async () => {
     if (audioChunksRef.current.length === 0) {
       toast.error('No audio recorded')
@@ -120,22 +134,71 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
       // Create audio blob
       const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' })
       
+      // Log blob details for debugging
+      console.log('Audio blob details:', {
+        size: audioBlob.size,
+        type: audioBlob.type
+      })
+      
+      if (audioBlob.size === 0) {
+        throw new Error('Audio recording is empty')
+      }
+      
       // Create form data
       const formData = new FormData()
       formData.append('audio', audioBlob, 'recording.webm')
       formData.append('session_id', sessionId)
 
-      // Send to backend
-      const response = await fetch('/api/voice', {
+      // Log the FormData object (just the keys since values aren't easily displayable)
+      console.log('FormData keys:', [...formData.keys()])
+      
+      // In Vite, environment variables are accessed via import.meta.env, not process.env
+      // And they need to be prefixed with VITE_ instead of REACT_APP_
+      const apiBaseUrl = import.meta.env.VITE_API_URL || ''
+      console.log('API base URL:', apiBaseUrl || 'Using relative URL (proxy)')
+      
+      // Send to backend with more verbose logging
+      // Use /api/voice to match your Vite proxy configuration
+      console.log('Sending POST request to:', `${apiBaseUrl}/api/voice`)
+      const response = await fetch(`${apiBaseUrl}/api/voice`, {
         method: 'POST',
         body: formData
       })
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`)
+      
+      console.log('Response status:', response.status, response.statusText)
+      
+      // Handle non-JSON responses
+      const contentType = response.headers.get('content-type')
+      console.log('Response content type:', contentType)
+      
+      let data
+      if (contentType && contentType.includes('application/json')) {
+        data = await response.json()
+        console.log('Response data:', data)
+      } else {
+        const textResponse = await response.text()
+        console.log('Non-JSON response:', textResponse)
+        
+        // Try to extract error message from HTML response (common in Flask 500 errors)
+        let errorMessage = 'Server returned non-JSON response'
+        if (textResponse.includes('<p>')) {
+          const match = textResponse.match(/<p>([^<]+)<\/p>/);
+          if (match && match[1]) {
+            errorMessage = `Server error: ${match[1].trim()}`;
+          }
+        }
+        
+        throw new Error(errorMessage)
       }
 
-      const data = await response.json()
+      if (!response.ok) {
+        const errorMessage = data.error || `Server error: ${response.status}`
+        throw new Error(errorMessage)
+      }
+
+      if (!data.transcript) {
+        throw new Error('Could not transcribe audio. Please try speaking more clearly.')
+      }
 
       // Create conversation entry
       const conversation = {
@@ -151,6 +214,7 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
 
       setConversations(prev => [...prev, conversation])
       setRecordingTime(0)
+      setLastError(null)
       
       // Auto-play response if not muted
       if (!isMuted && data.audio_url) {
@@ -161,7 +225,9 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
 
     } catch (error) {
       console.error('Error processing recording:', error)
-      toast.error('Failed to process voice message')
+      setLastError(error.message)
+      toast.error(`Failed to process voice: ${error.message}`)
+      throw error // Re-throw to be caught by the caller
     } finally {
       setIsProcessing(false)
     }
@@ -174,7 +240,11 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
         setCurrentAudio(null)
       }
 
-      const audio = new Audio(`/api${audioUrl}`)
+      // Add /api prefix to audio URLs if they don't include it
+      const fullAudioUrl = audioUrl.startsWith('/audio') ? `/api${audioUrl}` : audioUrl
+      console.log('Playing audio from:', fullAudioUrl)
+      
+      const audio = new Audio(fullAudioUrl)
       audioRef.current = audio
       setCurrentAudio(audio)
 
@@ -183,7 +253,8 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
         setIsPlaying(false)
         setCurrentAudio(null)
       }
-      audio.onerror = () => {
+      audio.onerror = (e) => {
+        console.error('Audio playback error:', e)
         setIsPlaying(false)
         setCurrentAudio(null)
         toast.error('Failed to play audio response')
@@ -206,8 +277,11 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
   }
 
   const downloadAudio = (audioUrl, filename) => {
+    // Add /api prefix to audio URLs if they don't include it
+    const fullAudioUrl = audioUrl.startsWith('/audio') ? `/api${audioUrl}` : audioUrl
+    
     const link = document.createElement('a')
-    link.href = `/api${audioUrl}`
+    link.href = fullAudioUrl
     link.download = filename
     document.body.appendChild(link)
     link.click()
@@ -358,6 +432,12 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
                 Tap again to stop and send
               </p>
             )}
+            
+            {lastError && !isRecording && !isProcessing && (
+              <p className="text-xs text-red-500 mt-2">
+                {lastError}
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -392,11 +472,11 @@ const VoiceInterface = ({ sessionId, isConnected }) => {
                         <Download className="h-4 w-4" />
                       </button>
                       <button
-                        onClick={isPlaying ? pauseAudio : () => playAudio(conversation.audioUrl)}
+                        onClick={isPlaying && currentAudio === audioRef.current ? pauseAudio : () => playAudio(conversation.audioUrl)}
                         className="text-gray-400 hover:text-purple-600"
-                        title={isPlaying ? 'Pause' : 'Play response'}
+                        title={isPlaying && currentAudio === audioRef.current ? 'Pause' : 'Play response'}
                       >
-                        {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                        {isPlaying && currentAudio === audioRef.current ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
                       </button>
                     </div>
                   )}

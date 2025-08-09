@@ -21,7 +21,7 @@ CHROMA_DB_PATH = BASE_DIR / 'data' / 'chroma_db'
 COLLECTION_NAME = 'admission_knowledge'
 
 # Model Configurations
-WHISPER_MODEL = 'base'  # base, small, medium, large
+WHISPER_MODEL = 'tiny'  # base, small, medium, large
 TTS_MODEL = 'tts_models/en/ljspeech/tacotron2-DDC'
 
 # Hugging Face Model Configuration

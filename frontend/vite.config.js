@@ -11,20 +11,45 @@ export default defineConfig({
     },
   },
   server: {
-  port: 3000,
-  host: true,
-  proxy: {
-    '/api': {
-      target: 'http://localhost:5000',
-      changeOrigin: true,
-      rewrite: (path) => path.replace(/^\/api/, ''),
-    },
-    '/health': {
-      target: 'http://localhost:5000',
-      changeOrigin: true,
+    port: 3000,
+    host: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      },
+      // Add direct routes for voice and audio endpoints
+      '/voice': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+      '/audio': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+      '/health': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+      '/chat': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+      '/followup': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+      '/analytics': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+      '/knowledge': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      }
     },
   },
-},
   build: {
     outDir: 'dist',
     sourcemap: true,
